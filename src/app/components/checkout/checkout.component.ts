@@ -105,7 +105,7 @@ export class CheckoutComponent implements OnInit{
     }
     else {
       this.checkoutFormGroup.controls["billingAddress"].reset();
-      //reset fix  for states- comment 
+      //reset fix  for states
       this.billingAddressStates = [];
     }
   }
