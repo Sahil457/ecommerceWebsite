@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `full-stack-ecommerce`.`address` (
   `zip_code` VARCHAR(255) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 3
+AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -55,9 +55,10 @@ CREATE TABLE IF NOT EXISTS `full-stack-ecommerce`.`customer` (
   `first_name` VARCHAR(255) NULL DEFAULT NULL,
   `last_name` VARCHAR(255) NULL DEFAULT NULL,
   `email` VARCHAR(255) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`))
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `email` (`email` ASC) VISIBLE)
 ENGINE = InnoDB
-AUTO_INCREMENT = 3
+AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -90,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `full-stack-ecommerce`.`orders` (
     FOREIGN KEY (`shipping_address_id`)
     REFERENCES `full-stack-ecommerce`.`address` (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 3
+AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -154,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `full-stack-ecommerce`.`order_item` (
     FOREIGN KEY (`product_id`)
     REFERENCES `full-stack-ecommerce`.`product` (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 7
+AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
